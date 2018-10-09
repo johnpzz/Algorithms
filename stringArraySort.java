@@ -19,8 +19,7 @@ import java.util.Arrays;
 // So: 1.2.15 becomes 1 2 15 in a String[]
 // Put these all in a parent String[] of size input*3
 // Do a bubble-sort type of check comparing last index, then second index, then first and swap as necessary
-// using two nested for loops where i = 0..array.length-1-3 and j = 2*index..0 where index starts at 0
-// and increments each time the loops are ran
+// WIP.. how to do comparisons
 
 public class stringArraySort {
     
