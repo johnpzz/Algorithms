@@ -13,7 +13,10 @@ import java.util.Comparator;
  * @author John
  */
 
-//String array of {1.2.15, 2.13.1, 2.4.4} etc.. must sort them
+// ************* WIP *************** not fully functional
+
+
+//String array of {1.2.15, 2.13.1, 2.4.4, 2.2} etc.. must sort them in increasing order
 
 // If you cannot do it this way, then here's my idea:
 // Split the numbers based on their decimal point
@@ -27,7 +30,7 @@ public class stringArraySort {
     public static String[] stringSort(String[] array) {
         
         // This is my magnum opus
-        Arrays.sort(array, new Comparator() {
+        Arrays.sort(array/*, new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
                 String s1 = (String) o1;
@@ -41,7 +44,7 @@ public class stringArraySort {
                 //return s1.compareTo(s2);
             }
             
-        });
+        }*/);
         return array;
      
     }
@@ -53,15 +56,15 @@ public class stringArraySort {
    
     
     public static void main(String[] args) {
-        
+        /*
         String aa = "1.1.1";
         aa = aa.replaceAll("\\.", "");
         System.out.println("aa: " + aa + "\n");
-       
+       */
         
 
         String[] array = {"1.2.14", "1.1.1", "1.1.4", "1.2.1", "2.3.14", "3.3.3", "2.2.3"};
-        String[] array2 = {"1.2.2", "1.2.13", "1.2.1", "1.2.16"};
+        String[] array2 = {"1.2.2", "1.2.13", "1.2.1", "1.2.16", "1.3"};
         
        
         
