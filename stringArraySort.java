@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Algorithms;
+package AlgorithmPractice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  *
@@ -25,8 +26,22 @@ public class stringArraySort {
     
     public static String[] stringSort(String[] array) {
         
-        // This is magic
-        Arrays.sort(array);
+        // This is my magnum opus
+        Arrays.sort(array, new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                String s1 = (String) o1;
+                String s2 = (String) o2;
+                s1 = s1.replaceAll("\\.", "");
+                s2 = s2.replaceAll("\\.", "");
+                
+                Integer a = Integer.parseInt(s1);
+                Integer b = Integer.parseInt(s2);
+                return a - b;
+                //return s1.compareTo(s2);
+            }
+            
+        });
         return array;
      
     }
@@ -38,9 +53,17 @@ public class stringArraySort {
    
     
     public static void main(String[] args) {
+        
+        String aa = "1.1.1";
+        aa = aa.replaceAll("\\.", "");
+        System.out.println("aa: " + aa + "\n");
        
+        
 
         String[] array = {"1.2.14", "1.1.1", "1.1.4", "1.2.1", "2.3.14", "3.3.3", "2.2.3"};
+        String[] array2 = {"1.2.2", "1.2.13", "1.2.1", "1.2.16"};
+        
+       
         
         System.out.println("Before sort: ");
         for (String a : array) {
@@ -49,11 +72,24 @@ public class stringArraySort {
         
         String[] s = stringSort(array);
         
+        
         System.out.println("\nPost sort: ");
-        for (String a : array) {
+        for (String a : s) 
             System.out.println(a);
-        }
+        
+        System.out.println("\nBefore sort: ");
+        for (String a : array2)
+            System.out.println(a);
+        
+        
+        String[] s2 = stringSort(array2);
+        
+        System.out.println("Post sort: ");
+        for (String a : s2)
+            System.out.println(a);
+        
         
     }
+
     
 }
